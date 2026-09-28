@@ -2,7 +2,21 @@
   const style=document.createElement('style');style.textContent=`
     .gym-live-status{position:relative;z-index:4;display:inline-flex;align-items:center;gap:10px;margin-bottom:4px;padding:9px 13px;border:1px solid rgba(255,255,255,.12);background:rgba(5,5,5,.55);backdrop-filter:blur(12px);border-radius:999px;text-transform:uppercase;letter-spacing:.12em}.gym-live-status small{display:block;color:#777;font-size:7px;letter-spacing:.18em}.gym-live-status b{display:inline-block;font-size:12px;margin-right:7px}.gym-live-status em{font-style:normal;color:#999;font-size:9px}.live-dot{width:8px;height:8px;border-radius:50%;background:#aaa;box-shadow:0 0 12px currentColor}.gym-live-status.busy .live-dot{background:#ff1616;color:#ff1616}.gym-live-status.medium .live-dot{background:#f3b21b;color:#f3b21b}.gym-live-status.quiet .live-dot{background:#42d17a;color:#42d17a}
     .offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:45px}.exclusive-card{border:1px solid var(--line);background:linear-gradient(145deg,#121212,#080808);overflow:hidden;position:relative}.offer-image{aspect-ratio:1.5;overflow:hidden;background:#0b0b0b}.offer-image img{width:100%;height:100%;object-fit:cover;display:block;transition:.5s var(--ease)}.exclusive-card:hover .offer-image img{transform:scale(1.04)}.offer-body{padding:22px}.offer-badge{display:inline-block;color:#fff;background:var(--red);padding:6px 8px;font-size:8px;font-weight:900;letter-spacing:.14em}.offer-body h3{font:900 34px Anton;margin:16px 0 8px}.offer-body p{color:#888;font-size:11px;line-height:1.7;min-height:38px}.offer-meta{display:flex;align-items:baseline;gap:10px;margin-top:16px}.offer-price{font:900 34px Anton;color:var(--red)}.offer-price small{font:900 10px Inter}.offer-old{text-decoration:line-through;color:#555;font-size:11px}.offer-expiry{color:#555;font-size:9px;letter-spacing:.1em;text-transform:uppercase}@media(max-width:900px){.offers-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.gym-live-status{margin-top:5px}.offers-grid{grid-template-columns:1fr}.offer-body h3{font-size:30px}}
+    .floating-fb{position:fixed;z-index:120;right:22px;bottom:92px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#1877F2;color:#fff;box-shadow:0 12px 40px rgba(24,119,242,.28);transition:.35s var(--ease);text-decoration:none}.floating-fb:hover{transform:scale(1.08) translateY(-4px);box-shadow:0 16px 46px rgba(24,119,242,.38)}.floating-fb svg{width:28px;height:28px;fill:currentColor}@media(max-width:620px){.floating-fb{right:16px;bottom:84px;width:52px;height:52px}.floating-fb svg{width:25px;height:25px}}
   `;document.head.appendChild(style);
+
+  const facebookUrl='https://www.facebook.com/share/14sgcfbPFvf/?mibextid=wwXIfr';
+  if(!document.querySelector('.floating-fb')){
+    const fb=document.createElement('a');
+    fb.className='floating-fb';
+    fb.href=facebookUrl;
+    fb.target='_blank';
+    fb.rel='noopener noreferrer';
+    fb.setAttribute('aria-label','Facebook FITNESS GYM');
+    fb.title='Facebook FITNESS GYM';
+    fb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 8.5V7c0-.7.3-1 1-1h1.5V3h-2.5C10.8 3 9 4.8 9 7.4v1.1H6.5v3H9V21h3.5v-9.5H15l.5-3h-3.5z"/></svg>';
+    document.body.appendChild(fb);
+  }
 
   const statusMap={quiet:{label:'QUIET',ar:'هادي',className:'quiet'},medium:{label:'MEDIUM',ar:'متوسط',className:'medium'},busy:{label:'BUSY',ar:'زحمة',className:'busy'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
