@@ -1,0 +1,41 @@
+/* FITNESS GYM ADMIN — mobile polish */
+@media (max-width: 700px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+  .wrap{width:100%;padding:16px 12px 45px!important;}
+  .top{padding-bottom:16px!important;gap:12px!important;}
+  .brand{font-size:32px!important;line-height:.95;}
+  .sub{font-size:8px!important;letter-spacing:.13em!important;}
+  .top>.btn{padding:10px 11px!important;font-size:10px!important;white-space:nowrap;}
+  .card{padding:16px!important;margin-top:12px!important;border-radius:14px!important;}
+  h2{font-size:25px!important;margin-bottom:10px!important;}
+  .toolbar{align-items:flex-start!important;flex-direction:column!important;gap:11px!important;margin-bottom:13px!important;}
+  .toolbar>.btn{width:100%;}
+  .hint{font-size:9px!important;line-height:1.55!important;}
+  .grid3{grid-template-columns:1fr!important;gap:8px!important;}
+  .status{padding:15px!important;min-height:64px;}
+  .login{display:grid!important;grid-template-columns:1fr!important;max-width:none!important;gap:8px!important;}
+  .login .btn{width:100%;}
+  input,textarea,select{min-height:44px!important;font-size:14px!important;padding:10px 11px!important;}
+  textarea{min-height:86px!important;}
+
+  .gallery{grid-template-columns:1fr!important;gap:10px!important;}
+  .item img{aspect-ratio:16/10!important;}
+  .item-body{padding:11px!important;}
+  .actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px!important;}
+  .actions .btn{min-height:42px!important;font-size:10px!important;}
+  .item .actions .btn:last-child{grid-column:1/-1;}
+
+  .offers{grid-template-columns:1fr!important;gap:10px!important;}
+  .offer{grid-template-columns:1fr!important;gap:10px!important;padding:10px!important;}
+  .offer img{width:100%!important;height:auto!important;aspect-ratio:16/10;object-fit:cover;border-radius:9px;}
+  .offer-fields{grid-template-columns:1fr!important;gap:7px!important;}
+  .offer-fields .full{grid-column:auto!important;}
+  .offer .actions{grid-template-columns:1fr 1fr!important;}
+
+  .toast{left:12px!important;right:12px!important;bottom:12px!important;text-align:center;font-size:12px!important;}
+}
+@media (max-width:380px){
+  .wrap{padding-inline:9px!important;}
+  .brand{font-size:28px!important;}
+  .card{padding:13px!important;}
+}
