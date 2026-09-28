@@ -1,0 +1,70 @@
+{
+  "gym": {
+    "name": "FITNESS GYM",
+    "phone": "01033659722",
+    "whatsapp": "201033659722",
+    "location": "Fayoum, Egypt",
+    "hours": {
+      "men": "24/7",
+      "women": "08:00-22:00"
+    }
+  },
+  "memberships": [
+    {
+      "name": "Prime",
+      "daysPerWeek": 2,
+      "plans": [
+        {"months": 1, "sessions": 8, "price": 350},
+        {"months": 2, "sessions": 16, "price": 650},
+        {"months": 3, "sessions": 24, "price": 850},
+        {"months": 6, "sessions": 48, "price": 1500},
+        {"months": 12, "sessions": 96, "price": 2500}
+      ]
+    },
+    {
+      "name": "Matrix",
+      "daysPerWeek": 3,
+      "plans": [
+        {"months": 1, "sessions": 12, "price": 450},
+        {"months": 2, "sessions": 24, "price": 850},
+        {"months": 3, "sessions": 36, "price": 1100},
+        {"months": 6, "sessions": 72, "price": 1900},
+        {"months": 12, "sessions": 144, "price": 3200}
+      ]
+    },
+    {
+      "name": "Elite",
+      "daysPerWeek": 4,
+      "plans": [
+        {"months": 1, "sessions": 16, "price": 500},
+        {"months": 2, "sessions": 32, "price": 900},
+        {"months": 3, "sessions": 48, "price": 1200},
+        {"months": 6, "sessions": 96, "price": 2100},
+        {"months": 12, "sessions": 192, "price": 3600}
+      ]
+    },
+    {
+      "name": "Legend",
+      "daysPerWeek": 5,
+      "plans": [
+        {"months": 1, "sessions": 20, "price": 550},
+        {"months": 2, "sessions": 40, "price": 1000},
+        {"months": 3, "sessions": 60, "price": 1300},
+        {"months": 6, "sessions": 120, "price": 2300},
+        {"months": 12, "sessions": 240, "price": 4000}
+      ]
+    },
+    {
+      "name": "Unlimited",
+      "daysPerWeek": 7,
+      "unlimited": true,
+      "plans": [
+        {"months": 1, "sessions": null, "price": 600},
+        {"months": 2, "sessions": null, "price": 1100},
+        {"months": 3, "sessions": null, "price": 1450},
+        {"months": 6, "sessions": null, "price": 2500},
+        {"months": 12, "sessions": null, "price": 4300}
+      ]
+    }
+  ]
+}
