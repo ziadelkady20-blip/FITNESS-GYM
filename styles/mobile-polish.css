@@ -43,11 +43,11 @@
   .stat b{font-size:37px!important;line-height:1;}
   .stat span{font-size:8px!important;}
 
-  /* Gallery */
-  .gallery-grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:145px!important;gap:7px!important;margin-top:30px!important;}
-  .gallery-card:nth-child(n){grid-column:span 1!important;grid-row:span 1!important;}
-  .gallery-card:nth-child(1),.gallery-card:nth-child(4){grid-column:span 2!important;grid-row:span 2!important;}
-  .gallery-card span{left:10px!important;bottom:9px!important;font-size:7px!important;letter-spacing:.1em!important;}
+  /* Gallery: one strong full-width card per row on phones */
+  .gallery-grid{grid-template-columns:1fr!important;grid-auto-rows:auto!important;gap:12px!important;margin-top:30px!important;}
+  .gallery-card:nth-child(n){grid-column:1!important;grid-row:auto!important;aspect-ratio:16/10!important;min-height:0!important;}
+  .gallery-card img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;}
+  .gallery-card span{left:14px!important;bottom:12px!important;font-size:8px!important;letter-spacing:.12em!important;}
 
   /* Hours */
   .hours-grid{grid-template-columns:1fr!important;gap:9px!important;margin-top:30px!important;}
