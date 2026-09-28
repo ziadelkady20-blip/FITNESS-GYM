@@ -6,7 +6,11 @@
 
   const statusMap={quiet:{label:'QUIET',ar:'هادي',className:'quiet'},medium:{label:'MEDIUM',ar:'متوسط',className:'medium'},busy:{label:'BUSY',ar:'زحمة',className:'busy'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const asset=u=>u+(u.includes('?')?'&':'?')+'v='+Date.now();
+
+  // Keep asset URLs stable. The previous Date.now() cache-buster forced every gallery image
+  // to download again whenever the live CMS data changed. Replaced/uploaded images already
+  // receive a new filename, so the browser can safely cache the current image URL.
+  const asset=u=>String(u||'');
   let lastSignature='';
   let requestInFlight=false;
 
@@ -16,7 +20,7 @@
   }
 
   function offerCard(o){
-    const image=o.image?`<div class="offer-image"><img src="${esc(asset(o.image))}" alt="${esc(o.title)}" loading="lazy"></div>`:'';
+    const image=o.image?`<div class="offer-image"><img src="${esc(asset(o.image))}" alt="${esc(o.title)}" loading="lazy" decoding="async" fetchpriority="low"></div>`:'';
     const price=o.price?`<div class="offer-price">${esc(o.price)}<small> LE</small></div>`:'';
     const old=o.oldPrice?`<div class="offer-old">${esc(o.oldPrice)} LE</div>`:'';
     return `<article class="exclusive-card">${image}<div class="offer-body"><span class="offer-badge">EXCLUSIVE OFFER</span><h3>${esc(o.title)}</h3><p>${esc(o.description||'Limited-time offer from FITNESS GYM.')}</p><div class="offer-meta">${price}${old}</div>${o.expiresAt?`<small class="offer-expiry">Until ${esc(o.expiresAt)}</small>`:''}</div></article>`;
@@ -33,7 +37,7 @@
 
     const gallery=document.querySelector('.gallery-grid');
     if(gallery&&Array.isArray(data.gallery)){
-      gallery.innerHTML=data.gallery.map((g,i)=>`<figure class="gallery-card"><img src="${esc(asset(g.image))}" alt="${esc(g.title)}" loading="${i<2?'eager':'lazy'}"><span>${esc(g.title)}</span></figure>`).join('');
+      gallery.innerHTML=data.gallery.map(g=>`<figure class="gallery-card"><img src="${esc(asset(g.image))}" alt="${esc(g.title)}" loading="lazy" decoding="async" fetchpriority="low"><span>${esc(g.title)}</span></figure>`).join('');
     }
 
     let section=document.getElementById('exclusive-offers');
