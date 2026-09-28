@@ -1,4 +1,3 @@
 {
-  "buildCommand": "node scripts/inject-cms.mjs",
-  "outputDirectory": "."
+  "buildCommand": "node scripts/inject-cms.mjs"
 }
