@@ -1,0 +1,17 @@
+{
+  "brand": {
+    "name": "FITNESS GYM",
+    "tagline": "TRAIN DIFFERENT.",
+    "phone": "01033659722",
+    "whatsapp": "201033659722"
+  },
+  "hours": {
+    "men": { "open": "00:00", "close": "24:00", "label": "24 / 7" },
+    "women": { "open": "08:00", "close": "22:00", "label": "08:00 — 22:00" }
+  },
+  "theme": {
+    "black": "#050505",
+    "red": "#ff1616",
+    "white": "#f7f7f7"
+  }
+}
