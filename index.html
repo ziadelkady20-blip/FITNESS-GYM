@@ -1,59 +1,141 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#050505" />
-  <title>FITNESS GYM CLUB — Train Different.</title>
-  <meta name="description" content="FITNESS GYM CLUB — premium fitness in Fayoum. Men 24/7. Women 8 AM–10 PM. Memberships from 350 LE." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>FITNESS GYM — Train Different.</title>
+  <meta name="description" content="FITNESS GYM Club — premium training in Fayoum. Men 24/7. Women 08:00–22:00.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/premium.css">
   <style>
-    :root{--red:#ff1616;--red2:#a80000;--black:#050505;--white:#f7f7f7;--muted:#929292;--line:rgba(255,255,255,.12)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}
-    #progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--red),#fff,var(--red));z-index:9999}
-    .noise{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:10;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
-    nav{position:fixed;inset:0 0 auto;z-index:100;padding:22px 5vw;display:flex;align-items:center;justify-content:space-between;transition:.45s}nav.scrolled{background:rgba(5,5,5,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding-block:14px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px}.brand-mark{width:42px;height:42px;border:2px solid var(--red);transform:skew(-12deg);display:grid;place-items:center;box-shadow:0 0 28px rgba(255,22,22,.18)}.brand-mark b{font-family:Anton;font-size:21px;color:var(--red);transform:skew(12deg)}.brand small{display:block;color:var(--red);font-size:9px;letter-spacing:4px;margin-top:2px}.navlinks{display:flex;gap:28px;color:#ccc;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}.navlinks a{position:relative}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:2px;background:var(--red);transition:.3s}.navlinks a:hover:after{right:0}.navcta{padding:12px 19px;background:var(--red);color:#fff;font-weight:900;font-size:11px;letter-spacing:1.5px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:.25s}.navcta:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(255,22,22,.28)}
-    .hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(255,22,22,.13),transparent 30%),#050505}.grid{position:absolute;inset:-20%;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;transform:perspective(500px) rotateX(62deg) translateY(25%);mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 75%,transparent)}.orb{position:absolute;width:42vw;height:42vw;max-width:650px;max-height:650px;border-radius:50%;background:radial-gradient(circle,rgba(255,22,22,.2),transparent 68%);filter:blur(10px);animation:pulse 5s ease-in-out infinite}.orb.o2{width:18vw;height:18vw;left:5%;top:18%;animation-delay:-2s}.hero-content{position:relative;z-index:2;text-align:center;padding:120px 20px 70px;max-width:1100px}.eyebrow{display:inline-flex;gap:9px;align-items:center;border:1px solid rgba(255,22,22,.45);padding:8px 15px;color:#fff;font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;background:rgba(255,22,22,.05);animation:rise .9s .15s both}.dot{width:7px;height:7px;background:var(--red);border-radius:50%;box-shadow:0 0 18px var(--red);animation:blink 1.2s infinite}.hero h1{font-family:Anton,Impact,sans-serif;font-size:clamp(78px,15vw,220px);line-height:.78;letter-spacing:-3px;margin:28px 0 24px;text-transform:uppercase;animation:rise 1s .25s both}.hero h1 span{color:var(--red);display:block;text-shadow:0 0 55px rgba(255,22,22,.25)}.hero p{max-width:650px;margin:auto;color:#aaa;line-height:1.7;font-size:15px;animation:rise 1s .4s both}.actions{display:flex;justify-content:center;gap:12px;margin-top:34px;animation:rise 1s .5s both}.btn{padding:16px 25px;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--line);transition:.3s}.btn.primary{background:var(--red);border-color:var(--red)}.btn.primary:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(255,22,22,.3)}.btn.ghost:hover{border-color:var(--red);color:var(--red)}.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:4px;color:#777}.scroll:after{content:"";display:block;width:1px;height:46px;background:linear-gradient(var(--red),transparent);margin:10px auto 0}
-    .ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;background:#080808}.ticker-track{display:inline-block;padding:18px 0;animation:marquee 25s linear infinite;font-family:Anton;font-size:24px;letter-spacing:2px}.ticker span{color:var(--red);margin:0 28px}
-    section{position:relative;padding:120px 6vw}.kicker{color:var(--red);font-size:10px;font-weight:900;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px}.title{font-family:Anton,Impact,sans-serif;font-size:clamp(52px,8vw,110px);line-height:.9;text-transform:uppercase;margin:0;letter-spacing:-1px}.title em{font-style:normal;color:var(--red)}
-    .hours{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:55px}.hour{background:#090909;padding:48px;position:relative;overflow:hidden}.hour:before{content:"";position:absolute;width:180px;height:180px;background:var(--red);filter:blur(90px);opacity:.08;right:-70px;top:-70px}.hour h3{font-family:Anton;font-size:38px;margin:0 0 8px}.hour strong{font-size:44px;color:var(--red)}.hour p{color:#777;margin:8px 0 0}
-    .members{background:#080808}.membership-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:55px}.plan{min-height:420px;border:1px solid var(--line);background:linear-gradient(145deg,#111,#070707);padding:25px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:.4s;transform-style:preserve-3d}.plan:hover{border-color:rgba(255,22,22,.7);transform:translateY(-10px) rotateX(2deg);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 50px rgba(255,22,22,.08)}.plan:after{content:"";position:absolute;width:180px;height:180px;background:var(--red);filter:blur(100px);opacity:.06;right:-100px;bottom:-100px}.plan .tag{color:var(--red);font-size:10px;font-weight:900;letter-spacing:2px}.plan h3{font-family:Anton;font-size:34px;margin:12px 0 5px}.days{color:#aaa;font-size:11px;letter-spacing:1px}.price{font-family:Anton;font-size:55px;margin-top:auto}.price small{font:700 11px Inter;color:#777}.plan ul{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--line);padding-top:16px}.plan li{font-size:11px;color:#aaa;padding:7px 0;display:flex;justify-content:space-between}.plan li b{color:#fff}.plan.unlimited{border-color:rgba(255,22,22,.45);background:linear-gradient(160deg,rgba(255,22,22,.11),#080808)}
-    .cta{min-height:70vh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at center,rgba(255,22,22,.13),transparent 38%),#050505;overflow:hidden}.cta .title{max-width:1000px}.cta .btn{margin-top:32px;display:inline-block}
-    footer{padding:50px 6vw 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-end;gap:30px}.footerbig{font-family:Anton;font-size:45px}.footerbig span{color:var(--red)}.contact{color:#999;font-size:13px;line-height:1.9}.contact a{color:#fff}.copy{color:#555;font-size:10px;margin-top:25px}
-    .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.in{opacity:1;transform:none}
-    @keyframes rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:none}}@keyframes pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.12);opacity:1}}@keyframes blink{50%{opacity:.25}}@keyframes marquee{to{transform:translateX(-50%)}}
-    @media(max-width:1000px){.navlinks{display:none}.membership-grid{grid-template-columns:repeat(2,1fr)}.hours{grid-template-columns:1fr}.hero h1{font-size:clamp(70px,18vw,150px)}}
-    @media(max-width:620px){nav{padding:16px 18px}.brand-mark{width:36px;height:36px}.navcta{padding:10px 13px}.hero-content{padding-top:110px}.hero h1{font-size:22vw;letter-spacing:-1px}.hero p{font-size:13px}.actions{flex-direction:column}.btn{width:100%}section{padding:85px 20px}.membership-grid{grid-template-columns:1fr}.plan{min-height:350px}.hour{padding:30px}.hour strong{font-size:36px}.footerbig{font-size:34px}footer{flex-direction:column;align-items:flex-start}}
+    .site-nav{position:fixed;z-index:100;inset:0 0 auto;padding:22px 4vw;display:flex;align-items:center;justify-content:space-between;transition:.5s var(--ease)}
+    .site-nav.scrolled{background:rgba(5,5,5,.78);backdrop-filter:blur(20px);padding-block:13px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.08em}
+    .logo-slot{width:48px;height:48px;border:1px dashed rgba(255,22,22,.65);display:grid;place-items:center;color:var(--red);font:900 9px Inter;letter-spacing:.08em;transform:skew(-8deg);background:#090909}
+    .brand-copy small{display:block;color:var(--red);font-size:9px;letter-spacing:.28em;margin-top:3px}
+    .nav-links{display:flex;gap:28px;color:#aaa;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .nav-links a{transition:.3s}.nav-links a:hover{color:#fff}
+    .nav-cta{background:var(--red);padding:13px 19px;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .hero-visual{position:absolute;inset:8% 4% 5%;border:1px solid rgba(255,255,255,.06);overflow:hidden;pointer-events:none}
+    .hero-visual::before{content:"HERO IMAGE SLOT";position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.12);font:900 12px Inter;letter-spacing:.3em}
+    .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.78) 35%,rgba(5,5,5,.16) 75%,#050505 100%),linear-gradient(0deg,#050505 0%,transparent 45%,#050505 100%)}
+    .hero-copy{text-align:left;margin-left:7vw;max-width:1000px}
+    .hero-copy .eyebrow{position:relative;z-index:2}
+    .hero-copy h1{position:relative;z-index:2;font:950 clamp(82px,13vw,190px)/.78 Anton,Impact,sans-serif;letter-spacing:-.055em;text-transform:uppercase;margin:28px 0 26px}
+    .hero-copy h1 span{display:block;color:var(--red);text-shadow:0 0 70px rgba(255,22,22,.25)}
+    .hero-copy p{position:relative;z-index:2;max-width:540px;color:#a5a5a5;line-height:1.8;font-size:14px}
+    .hero-copy .fg-actions{position:relative;z-index:2}
+    .hero-index{position:absolute;right:5vw;bottom:5vw;z-index:3;color:#777;font:900 10px Inter;letter-spacing:.2em}
+    .hero-index b{color:#fff;font-size:25px;margin-right:8px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+    .stat{padding:34px 28px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{font:900 clamp(30px,4vw,52px) Anton;color:#fff}.stat span{display:block;color:#777;text-transform:uppercase;font-size:9px;letter-spacing:.18em;margin-top:5px}
+    .photo-stage{display:grid;grid-template-columns:1.4fr .6fr;gap:12px;margin-top:55px}.photo{min-height:430px;background:#0b0b0b;border:1px dashed rgba(255,255,255,.15);position:relative;overflow:hidden}.photo.tall{min-height:600px}.photo::before{content:"REAL GYM PHOTO";position:absolute;inset:0;display:grid;place-items:center;color:#2e2e2e;font-size:10px;font-weight:900;letter-spacing:.25em}.photo span{position:absolute;left:20px;bottom:18px;z-index:2;color:#888;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+    .split{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end}.split-copy{color:#888;line-height:1.9;max-width:560px}.red-rule{width:70px;height:2px;background:var(--red);margin:28px 0}
+    .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:55px}.hour-card{min-height:310px;border:1px solid var(--line);padding:32px;background:linear-gradient(145deg,#111,#080808);position:relative;overflow:hidden}.hour-card::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:var(--red);filter:blur(100px);opacity:.08;right:-120px;top:-120px}.hour-card h3{font:900 42px Anton;margin:12px 0}.hour-card strong{font-size:clamp(30px,4vw,52px);color:var(--red)}.hour-card p{color:#777}
+    .membership-head{display:flex;justify-content:space-between;gap:30px;align-items:end}.membership-head p{max-width:420px;color:#777;line-height:1.7;font-size:12px}
+    .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:50px}.plan-card{min-height:500px;padding:24px;border:1px solid var(--line);background:linear-gradient(150deg,#121212,#070707);position:relative;overflow:hidden;transition:.5s var(--ease);display:flex;flex-direction:column}.plan-card:hover{transform:translateY(-12px);border-color:rgba(255,22,22,.6);box-shadow:0 35px 80px rgba(0,0,0,.55),0 0 50px rgba(255,22,22,.08)}.plan-card.featured{border-color:rgba(255,22,22,.5);background:linear-gradient(150deg,rgba(255,22,22,.13),#080808)}.plan-card .number{font-size:9px;color:#555;letter-spacing:.18em}.plan-card h3{font:900 35px Anton;margin:16px 0 4px}.plan-card .frequency{color:var(--red);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.plan-card ul{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line)}.plan-card li{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:10px;color:#888}.plan-card li b{color:#fff}.plan-card .plan-cta{margin-top:auto;border:1px solid var(--line);padding:12px;text-align:center;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;transition:.3s}.plan-card:hover .plan-cta{background:var(--red);border-color:var(--red)}
+    .marquee-big{font:900 clamp(55px,10vw,130px)/.8 Anton;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.2);white-space:nowrap;overflow:hidden;margin:0 -6vw;padding:35px 0;border-block:1px solid var(--line)}.marquee-big span{color:var(--red);-webkit-text-stroke:0}
+    .final-cta{min-height:75vh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,rgba(255,22,22,.15),transparent 42%)}.final-cta h2{font:900 clamp(70px,12vw,180px)/.76 Anton;margin:0;text-transform:uppercase;letter-spacing:-.06em}.final-cta h2 span{color:var(--red)}.final-cta p{color:#888;max-width:500px;margin:30px auto;line-height:1.7}
+    .footer{border-top:1px solid var(--line);padding:50px 5vw 28px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer h3{font:900 44px Anton;margin:0}.footer h3 span{color:var(--red)}.footer p,.footer a{color:#777;font-size:12px;line-height:1.8}.footer a:hover{color:#fff}.footer-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;color:#444;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+    .floating-wa{position:fixed;z-index:120;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--red);box-shadow:0 12px 40px rgba(255,22,22,.28);font-size:18px;font-weight:900;transition:.35s var(--ease)}.floating-wa:hover{transform:scale(1.08) translateY(-4px)}
+    @media(max-width:1050px){.nav-links{display:none}.plans{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr;gap:25px}.photo-stage{grid-template-columns:1fr}.photo.tall{min-height:430px}}
+    @media(max-width:620px){.site-nav{padding:15px 18px}.logo-slot{width:40px;height:40px}.nav-cta{padding:11px 13px}.hero-copy{margin-left:0}.hero-copy h1{font-size:21vw}.hero-visual{inset:10% 18px 4%}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.hours-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.membership-head{display:block}.footer{grid-template-columns:1fr}.footer-bottom{grid-column:auto}.floating-wa{right:16px;bottom:16px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
-<body>
-<div id="progress"></div><div class="noise"></div>
-<nav id="nav"><a class="brand" href="#top"><span class="brand-mark"><b>F</b></span><span>FITNESS GYM<small>CLUB</small></span></a><div class="navlinks"><a href="#about">Experience</a><a href="#hours">Hours</a><a href="#memberships">Memberships</a></div><a class="navcta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27d%20like%20to%20ask%20about%20membership." target="_blank" rel="noopener">JOIN NOW</a></nav>
-<main id="top">
-  <section class="hero">
-    <div class="grid"></div><div class="orb"></div><div class="orb o2"></div>
-    <div class="hero-content"><div class="eyebrow"><i class="dot"></i> FITNESS GYM CLUB · FAYOUM</div><h1>TRAIN<br><span>DIFFERENT.</span></h1><p>More than a gym. A serious training environment built around consistency, strength and progress.</p><div class="actions"><a class="btn primary" href="#memberships">EXPLORE MEMBERSHIPS</a><a class="btn ghost" href="tel:01033659722">CALL 01033659722</a></div></div><div class="scroll">SCROLL TO ENTER</div>
-  </section>
-  <div class="ticker"><div class="ticker-track">TRAIN HARD <span>///</span> STAY CONSISTENT <span>///</span> BUILD YOURSELF <span>///</span> FITNESS GYM CLUB <span>///</span> TRAIN HARD <span>///</span> STAY CONSISTENT <span>///</span> BUILD YOURSELF <span>///</span></div></div>
-  <section id="about"><div class="reveal"><div class="kicker">01 / THE EXPERIENCE</div><h2 class="title">BUILT FOR<br><em>PEOPLE WHO TRAIN.</em></h2><p style="max-width:680px;color:#999;line-height:1.9;margin-top:30px">FITNESS GYM is designed around one idea: make training a habit you actually want to keep. The new website is built to feel as intense, fast and precise as the gym itself.</p></div></section>
-  <section id="hours"><div class="reveal"><div class="kicker">02 / OPENING HOURS</div><h2 class="title">YOUR TIME.<br><em>YOUR RULES.</em></h2><div class="hours"><article class="hour"><div class="kicker">MEN</div><h3>24 / 7</h3><strong>00:00 — 24:00</strong><p>Open every day, all day.</p></article><article class="hour"><div class="kicker">WOMEN</div><h3>DAILY</h3><strong>08:00 — 22:00</strong><p>Women-only training hours.</p></article></div></div></section>
-  <section class="members" id="memberships"><div class="reveal"><div class="kicker">03 / MEMBERSHIPS</div><h2 class="title">CHOOSE YOUR<br><em>LEVEL.</em></h2><div class="membership-grid">
-    <article class="plan"><span class="tag">02 DAYS WEEKLY</span><h3>PRIME</h3><span class="days">8 → 96 sessions</span><div class="price">350 <small>LE / 1 MONTH</small></div><ul><li>1 Month <b>350 LE</b></li><li>2 Months <b>650 LE</b></li><li>3 Months <b>850 LE</b></li><li>6 Months <b>1,500 LE</b></li><li>12 Months <b>2,500 LE</b></li></ul></article>
-    <article class="plan"><span class="tag">03 DAYS WEEKLY</span><h3>MATRIX</h3><span class="days">12 → 144 sessions</span><div class="price">450 <small>LE / 1 MONTH</small></div><ul><li>1 Month <b>450 LE</b></li><li>2 Months <b>850 LE</b></li><li>3 Months <b>1,100 LE</b></li><li>6 Months <b>1,900 LE</b></li><li>12 Months <b>3,200 LE</b></li></ul></article>
-    <article class="plan"><span class="tag">04 DAYS WEEKLY</span><h3>ELITE</h3><span class="days">16 → 192 sessions</span><div class="price">500 <small>LE / 1 MONTH</small></div><ul><li>1 Month <b>500 LE</b></li><li>2 Months <b>900 LE</b></li><li>3 Months <b>1,200 LE</b></li><li>6 Months <b>2,100 LE</b></li><li>12 Months <b>3,600 LE</b></li></ul></article>
-    <article class="plan"><span class="tag">05 DAYS WEEKLY</span><h3>LEGEND</h3><span class="days">20 → 240 sessions</span><div class="price">550 <small>LE / 1 MONTH</small></div><ul><li>1 Month <b>550 LE</b></li><li>2 Months <b>1,000 LE</b></li><li>3 Months <b>1,300 LE</b></li><li>6 Months <b>2,300 LE</b></li><li>12 Months <b>4,000 LE</b></li></ul></article>
-    <article class="plan unlimited"><span class="tag">EVERY DAY</span><h3>UNLIMITED</h3><span class="days">∞ sessions</span><div class="price">600 <small>LE / 1 MONTH</small></div><ul><li>1 Month <b>600 LE</b></li><li>2 Months <b>1,100 LE</b></li><li>3 Months <b>1,450 LE</b></li><li>6 Months <b>2,500 LE</b></li><li>12 Months <b>4,300 LE</b></li></ul></article>
-  </div></div></section>
-  <section class="cta"><div class="reveal"><div class="kicker">04 / READY?</div><h2 class="title">STOP WAITING.<br><em>START TRAINING.</em></h2><a class="btn primary" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27d%20like%20to%20join." target="_blank" rel="noopener">MESSAGE FITNESS GYM</a></div></section>
-</main>
-<footer><div><div class="footerbig">FITNESS <span>GYM</span></div><div class="copy">© 2026 FITNESS GYM CLUB. ALL RIGHTS RESERVED.</div></div><div class="contact"><b style="color:#fff">CONTACT</b><br><a href="tel:01033659722">01033659722</a><br><a href="https://wa.me/201033659722" target="_blank" rel="noopener">WhatsApp</a></div></footer>
-<script>
-const nav=document.getElementById('nav'),progress=document.getElementById('progress');
-addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%'});
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
-const cards=[...document.querySelectorAll('.plan')];cards.forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`translateY(-10px) rotateX(${y*-5}deg) rotateY(${x*5}deg)`}));cards.forEach(c=>c.addEventListener('pointerleave',()=>c.style.transform=''));
-</script>
+<body class="fg-shell">
+  <div id="progress"></div><div class="fg-grid"></div>
+  <header class="site-nav" id="siteNav">
+    <a class="brand" href="#top"><span class="logo-slot" aria-label="Official FITNESS GYM logo will be placed here">LOGO</span><span class="brand-copy">FITNESS GYM<small>CLUB</small></span></a>
+    <nav class="nav-links"><a href="#experience">Experience</a><a href="#hours">Hours</a><a href="#memberships">Memberships</a><a href="#gallery">Gallery</a></nav>
+    <a class="nav-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27d%20like%20to%20ask%20about%20membership." target="_blank" rel="noopener">Join Now</a>
+  </header>
+
+  <main id="top">
+    <section class="fg-hero">
+      <div class="hero-visual"></div><div class="fg-orbit"><i></i></div>
+      <div class="hero-content hero-copy">
+        <div class="fg-eyebrow">FITNESS GYM CLUB · FAYOUM</div>
+        <h1>TRAIN<br><span>DIFFERENT.</span></h1>
+        <p>A premium digital experience for a gym built around discipline, strength and consistency. Real photography and the official logo will become the visual anchors of this experience.</p>
+        <div class="fg-actions"><a class="fg-btn primary" href="#memberships">Explore Memberships →</a><a class="fg-btn" href="tel:01033659722">Call 01033659722</a></div>
+      </div>
+      <div class="hero-index"><b>01</b> ENTER THE EXPERIENCE</div>
+    </section>
+
+    <div class="fg-marquee"><div class="fg-marquee-track">TRAIN HARD <b>///</b> STAY CONSISTENT <b>///</b> BUILD YOURSELF <b>///</b> FITNESS GYM CLUB <b>///</b> TRAIN HARD <b>///</b> STAY CONSISTENT <b>///</b> BUILD YOURSELF <b>///</b> FITNESS GYM CLUB <b>///</b></div></div>
+
+    <section id="experience" class="fg-section">
+      <div class="split reveal"><div><div class="fg-kicker">02 / THE EXPERIENCE</div><h2 class="fg-heading">NOT JUST<br><em>A GYM.</em></h2></div><div><div class="red-rule"></div><p class="split-copy">FITNESS GYM is being shaped into a digital experience that feels as focused as the training floor. The layout leaves room for the real identity, real gym photography and future dynamic content instead of pretending those assets exist before they are supplied.</p></div></div>
+      <div class="stats reveal"><div class="stat"><b>24/7</b><span>Men's access</span></div><div class="stat"><b>08—22</b><span>Women's hours</span></div><div class="stat"><b>5</b><span>Membership levels</span></div></div>
+    </section>
+
+    <section id="gallery" class="fg-section">
+      <div class="reveal"><div class="fg-kicker">03 / THE SPACE</div><h2 class="fg-heading">PUT THE<br><em>REAL GYM</em> HERE.</h2></div>
+      <div class="photo-stage reveal"><div class="photo tall"><span>Hero / Main training floor</span></div><div class="photo"><span>Equipment / detail</span></div></div>
+      <p style="color:#555;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:15px">Final logo + real location photography will replace these reserved compositions.</p>
+    </section>
+
+    <section id="hours" class="fg-section">
+      <div class="reveal"><div class="fg-kicker">04 / OPENING HOURS</div><h2 class="fg-heading">YOUR TIME.<br><em>YOUR RULES.</em></h2></div>
+      <div class="hours-grid reveal">
+        <article class="hour-card"><div class="fg-kicker">MEN</div><h3>24 / 7</h3><strong>00:00 — 24:00</strong><p>Open every day, all day.</p></article>
+        <article class="hour-card"><div class="fg-kicker">WOMEN</div><h3>DAILY</h3><strong>08:00 — 22:00</strong><p>Women-only training hours.</p></article>
+      </div>
+    </section>
+
+    <div class="fg-marquee"><div class="fg-marquee-track">DISCIPLINE <b>///</b> STRENGTH <b>///</b> CONSISTENCY <b>///</b> PROGRESS <b>///</b> DISCIPLINE <b>///</b> STRENGTH <b>///</b> CONSISTENCY <b>///</b> PROGRESS <b>///</b></div></div>
+
+    <section id="memberships" class="fg-section">
+      <div class="membership-head reveal"><div><div class="fg-kicker">05 / MEMBERSHIPS</div><h2 class="fg-heading">CHOOSE YOUR<br><em>LEVEL.</em></h2></div><p>Every price below is taken from the supplied FITNESS GYM membership sheet. No pricing is invented here.</p></div>
+      <div class="plans reveal">
+        <article class="plan-card"><span class="number">01 / PRIME</span><h3>PRIME</h3><span class="frequency">2 DAYS WEEKLY</span><ul><li>1 Month <b>350 LE</b></li><li>2 Months <b>650 LE</b></li><li>3 Months <b>850 LE</b></li><li>6 Months <b>1,500 LE</b></li><li>12 Months <b>2,500 LE</b></li></ul><a class="plan-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27m%20interested%20in%20the%20Prime%20membership." target="_blank" rel="noopener">Ask about Prime</a></article>
+        <article class="plan-card"><span class="number">02 / MATRIX</span><h3>MATRIX</h3><span class="frequency">3 DAYS WEEKLY</span><ul><li>1 Month <b>450 LE</b></li><li>2 Months <b>850 LE</b></li><li>3 Months <b>1,100 LE</b></li><li>6 Months <b>1,900 LE</b></li><li>12 Months <b>3,200 LE</b></li></ul><a class="plan-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27m%20interested%20in%20the%20Matrix%20membership." target="_blank" rel="noopener">Ask about Matrix</a></article>
+        <article class="plan-card"><span class="number">03 / ELITE</span><h3>ELITE</h3><span class="frequency">4 DAYS WEEKLY</span><ul><li>1 Month <b>500 LE</b></li><li>2 Months <b>900 LE</b></li><li>3 Months <b>1,200 LE</b></li><li>6 Months <b>2,100 LE</b></li><li>12 Months <b>3,600 LE</b></li></ul><a class="plan-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27m%20interested%20in%20the%20Elite%20membership." target="_blank" rel="noopener">Ask about Elite</a></article>
+        <article class="plan-card"><span class="number">04 / LEGEND</span><h3>LEGEND</h3><span class="frequency">5 DAYS WEEKLY</span><ul><li>1 Month <b>550 LE</b></li><li>2 Months <b>1,000 LE</b></li><li>3 Months <b>1,300 LE</b></li><li>6 Months <b>2,300 LE</b></li><li>12 Months <b>4,000 LE</b></li></ul><a class="plan-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27m%20interested%20in%20the%20Legend%20membership." target="_blank" rel="noopener">Ask about Legend</a></article>
+        <article class="plan-card featured"><span class="number">05 / UNLIMITED</span><h3>UNLIMITED</h3><span class="frequency">EVERY DAY · ∞ SESSIONS</span><ul><li>1 Month <b>600 LE</b></li><li>2 Months <b>1,100 LE</b></li><li>3 Months <b>1,450 LE</b></li><li>6 Months <b>2,500 LE</b></li><li>12 Months <b>4,300 LE</b></li></ul><a class="plan-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27m%20interested%20in%20the%20Unlimited%20membership." target="_blank" rel="noopener">Ask about Unlimited</a></article>
+      </div>
+    </section>
+
+    <section class="fg-section final-cta">
+      <div class="reveal"><div class="fg-kicker">06 / READY?</div><h2>MAKE<br><span>THE MOVE.</span></h2><p>Questions about memberships, hours or joining? Talk directly to FITNESS GYM.</p><a class="fg-btn primary" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27d%20like%20to%20ask%20about%20joining." target="_blank" rel="noopener">WhatsApp 01033659722 →</a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><h3>FITNESS <span>GYM</span></h3><p>TRAIN DIFFERENT. · FAYOUM</p></div>
+    <div><p><strong style="color:#fff">HOURS</strong><br>Men · 24 / 7<br>Women · 08:00 — 22:00</p></div>
+    <div><p><strong style="color:#fff">CONTACT</strong><br><a href="tel:01033659722">01033659722</a><br><a href="https://wa.me/201033659722" target="_blank" rel="noopener">WhatsApp</a></p></div>
+    <div class="footer-bottom">© FITNESS GYM CLUB · All rights reserved.</div>
+  </footer>
+  <a class="floating-wa" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM" target="_blank" rel="noopener" aria-label="WhatsApp FITNESS GYM">WA</a>
+
+  <script>
+    const nav=document.getElementById('siteNav');
+    const progress=document.getElementById('progress');
+    const reveals=document.querySelectorAll('.reveal');
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const update=()=>{
+      nav.classList.toggle('scrolled',scrollY>30);
+      const max=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=max>0?(scrollY/max*100)+'%':'0%';
+    };
+    addEventListener('scroll',update,{passive:true}); update();
+    if(!reduced && 'IntersectionObserver' in window){
+      const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+      reveals.forEach(e=>io.observe(e));
+    } else reveals.forEach(e=>e.classList.add('in'));
+    if(!reduced){
+      document.querySelectorAll('.plan-card').forEach(card=>{
+        card.addEventListener('pointermove',e=>{
+          if(matchMedia('(hover:hover)').matches){const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`translateY(-10px) perspective(700px) rotateY(${x*4}deg) rotateX(${y*-4}deg)`;}}
+        );
+        card.addEventListener('pointerleave',()=>card.style.transform='');
+      });
+    }
+  </script>
 </body>
 </html>
