@@ -6,7 +6,8 @@
   `;document.head.appendChild(style);
 
   const facebookUrl='https://www.facebook.com/share/14sgcfbPFvf/?mibextid=wwXIfr';
-  if(!document.querySelector('.floating-fb')){
+  function ensureFacebookButton(){
+    if(!document.body||document.querySelector('.floating-fb'))return;
     const fb=document.createElement('a');
     fb.className='floating-fb';
     fb.href=facebookUrl;
@@ -21,9 +22,6 @@
   const statusMap={quiet:{label:'QUIET',ar:'هادي',className:'quiet'},medium:{label:'MEDIUM',ar:'متوسط',className:'medium'},busy:{label:'BUSY',ar:'زحمة',className:'busy'}};
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-  // Keep asset URLs stable. The previous Date.now() cache-buster forced every gallery image
-  // to download again whenever the live CMS data changed. Replaced/uploaded images already
-  // receive a new filename, so the browser can safely cache the current image URL.
   const asset=u=>String(u||'');
   let lastSignature='';
   let requestInFlight=false;
@@ -41,6 +39,7 @@
   }
 
   function render(data){
+    ensureFacebookButton();
     const hero=document.querySelector('.hero-copy');
     if(hero){
       let status=hero.querySelector('.gym-live-status');
@@ -87,14 +86,19 @@
       if(force||signature!==lastSignature){
         lastSignature=signature;
         render(data);
+      }else{
+        ensureFacebookButton();
       }
-    }catch(e){console.warn('CMS data unavailable',e)}finally{requestInFlight=false}
+    }catch(e){console.warn('CMS data unavailable',e);ensureFacebookButton()}finally{requestInFlight=false}
   }
 
-  boot(true);
+  function start(){
+    ensureFacebookButton();
+    boot(true);
+    setInterval(()=>boot(),2000);
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')boot(true)});
+  }
 
-  // Live CMS sync: public website checks for admin changes every 2 seconds.
-  // No page refresh is required. Requests pause while the tab is hidden.
-  setInterval(()=>boot(),2000);
-  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')boot(true)});
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});
+  else start();
 })();
