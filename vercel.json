@@ -3,7 +3,7 @@
   "outputDirectory": ".",
   "headers": [
     {
-      "source": "/(.*\\.(jpg|jpeg|png|webp|JPG|JPEG|PNG|WEBP))",
+      "source": "/(.*)\\.(jpg|jpeg|png|webp|svg|ico)$",
       "headers": [
         {
           "key": "Cache-Control",
