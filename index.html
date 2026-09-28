@@ -14,42 +14,30 @@
     .site-nav{position:fixed;z-index:100;inset:0 0 auto;padding:22px 4vw;display:flex;align-items:center;justify-content:space-between;transition:.5s var(--ease)}
     .site-nav.scrolled{background:rgba(5,5,5,.78);backdrop-filter:blur(20px);padding-block:13px;border-bottom:1px solid var(--line)}
     .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.08em}
-    .logo-slot{width:48px;height:48px;border:1px dashed rgba(255,22,22,.65);display:grid;place-items:center;color:var(--red);font:900 9px Inter;letter-spacing:.08em;transform:skew(-8deg);background:#090909}
+    .logo-slot{width:54px;height:54px;display:grid;place-items:center;background:#090909;overflow:hidden;border:1px solid rgba(255,255,255,.1);transform:skew(-8deg)}
+    .logo-slot img{width:100%;height:100%;object-fit:contain;transform:skew(8deg);padding:5px}
     .brand-copy small{display:block;color:var(--red);font-size:9px;letter-spacing:.28em;margin-top:3px}
-    .nav-links{display:flex;gap:28px;color:#aaa;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
-    .nav-links a{transition:.3s}.nav-links a:hover{color:#fff}
+    .nav-links{display:flex;gap:28px;color:#aaa;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.nav-links a{transition:.3s}.nav-links a:hover{color:#fff}
     .nav-cta{background:var(--red);padding:13px 19px;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
-    .hero-visual{position:absolute;inset:8% 4% 5%;border:1px solid rgba(255,255,255,.06);overflow:hidden;pointer-events:none}
-    .hero-visual::before{content:"HERO IMAGE SLOT";position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.12);font:900 12px Inter;letter-spacing:.3em}
-    .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.78) 35%,rgba(5,5,5,.16) 75%,#050505 100%),linear-gradient(0deg,#050505 0%,transparent 45%,#050505 100%)}
-    .hero-copy{text-align:left;margin-left:7vw;max-width:1000px}
-    .hero-copy .eyebrow{position:relative;z-index:2}
-    .hero-copy h1{position:relative;z-index:2;font:950 clamp(82px,13vw,190px)/.78 Anton,Impact,sans-serif;letter-spacing:-.055em;text-transform:uppercase;margin:28px 0 26px}
-    .hero-copy h1 span{display:block;color:var(--red);text-shadow:0 0 70px rgba(255,22,22,.25)}
-    .hero-copy p{position:relative;z-index:2;max-width:540px;color:#a5a5a5;line-height:1.8;font-size:14px}
-    .hero-copy .fg-actions{position:relative;z-index:2}
-    .hero-index{position:absolute;right:5vw;bottom:5vw;z-index:3;color:#777;font:900 10px Inter;letter-spacing:.2em}
-    .hero-index b{color:#fff;font-size:25px;margin-right:8px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
-    .stat{padding:34px 28px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{font:900 clamp(30px,4vw,52px) Anton;color:#fff}.stat span{display:block;color:#777;text-transform:uppercase;font-size:9px;letter-spacing:.18em;margin-top:5px}
-    .photo-stage{display:grid;grid-template-columns:1.4fr .6fr;gap:12px;margin-top:55px}.photo{min-height:430px;background:#0b0b0b;border:1px dashed rgba(255,255,255,.15);position:relative;overflow:hidden}.photo.tall{min-height:600px}.photo::before{content:"REAL GYM PHOTO";position:absolute;inset:0;display:grid;place-items:center;color:#2e2e2e;font-size:10px;font-weight:900;letter-spacing:.25em}.photo span{position:absolute;left:20px;bottom:18px;z-index:2;color:#888;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
-    .split{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end}.split-copy{color:#888;line-height:1.9;max-width:560px}.red-rule{width:70px;height:2px;background:var(--red);margin:28px 0}
+    .hero-visual{position:absolute;inset:6% 3% 4%;overflow:hidden;pointer-events:none;background:#090909 url('./hero.JPG') center center/cover no-repeat;border:1px solid rgba(255,255,255,.08)}
+    .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.86) 26%,rgba(5,5,5,.30) 63%,rgba(5,5,5,.64) 100%),linear-gradient(0deg,#050505 0%,transparent 35%,rgba(5,5,5,.35) 100%)}
+    .hero-copy{text-align:left;margin-left:7vw;max-width:1000px}.hero-copy .fg-eyebrow{position:relative;z-index:2}.hero-copy h1{position:relative;z-index:2;font:950 clamp(82px,13vw,190px)/.78 Anton,Impact,sans-serif;letter-spacing:-.055em;text-transform:uppercase;margin:28px 0 26px}.hero-copy h1 span{display:block;color:var(--red);text-shadow:0 0 70px rgba(255,22,22,.25)}.hero-copy p{position:relative;z-index:2;max-width:540px;color:#c0c0c0;line-height:1.8;font-size:14px}.hero-copy .fg-actions{position:relative;z-index:2}.hero-index{position:absolute;right:5vw;bottom:5vw;z-index:3;color:#aaa;font:900 10px Inter;letter-spacing:.2em}.hero-index b{color:#fff;font-size:25px;margin-right:8px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}.stat{padding:34px 28px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{font:900 clamp(30px,4vw,52px) Anton;color:#fff}.stat span{display:block;color:#777;text-transform:uppercase;font-size:9px;letter-spacing:.18em;margin-top:5px}
+    .space-intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:end}.space-copy{color:#888;line-height:1.9;max-width:600px}.red-rule{width:70px;height:2px;background:var(--red);margin:28px 0}
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:105px;gap:10px;margin-top:55px}.gallery-card{position:relative;overflow:hidden;background:#0b0b0b;border:1px solid rgba(255,255,255,.08);min-width:0}.gallery-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .8s var(--ease),filter .6s var(--ease)}.gallery-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.68));pointer-events:none}.gallery-card span{position:absolute;left:16px;bottom:14px;z-index:2;color:#eee;font-size:9px;letter-spacing:.15em;text-transform:uppercase}.gallery-card:hover img{transform:scale(1.06);filter:saturate(1.08)}.gallery-card:nth-child(1){grid-column:span 6;grid-row:span 5}.gallery-card:nth-child(2){grid-column:span 3;grid-row:span 3}.gallery-card:nth-child(3){grid-column:span 3;grid-row:span 3}.gallery-card:nth-child(4){grid-column:span 6;grid-row:span 4}.gallery-card:nth-child(5){grid-column:span 3;grid-row:span 4}.gallery-card:nth-child(6){grid-column:span 3;grid-row:span 4}.gallery-card:nth-child(7){grid-column:span 4;grid-row:span 4}.gallery-card:nth-child(8){grid-column:span 4;grid-row:span 4}.gallery-card:nth-child(9){grid-column:span 4;grid-row:span 4}.gallery-card:nth-child(n+10){grid-column:span 3;grid-row:span 3}
+    .gallery-note{color:#555;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:15px}
     .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:55px}.hour-card{min-height:310px;border:1px solid var(--line);padding:32px;background:linear-gradient(145deg,#111,#080808);position:relative;overflow:hidden}.hour-card::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:var(--red);filter:blur(100px);opacity:.08;right:-120px;top:-120px}.hour-card h3{font:900 42px Anton;margin:12px 0}.hour-card strong{font-size:clamp(30px,4vw,52px);color:var(--red)}.hour-card p{color:#777}
-    .membership-head{display:flex;justify-content:space-between;gap:30px;align-items:end}.membership-head p{max-width:420px;color:#777;line-height:1.7;font-size:12px}
-    .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:50px}.plan-card{min-height:500px;padding:24px;border:1px solid var(--line);background:linear-gradient(150deg,#121212,#070707);position:relative;overflow:hidden;transition:.5s var(--ease);display:flex;flex-direction:column}.plan-card:hover{transform:translateY(-12px);border-color:rgba(255,22,22,.6);box-shadow:0 35px 80px rgba(0,0,0,.55),0 0 50px rgba(255,22,22,.08)}.plan-card.featured{border-color:rgba(255,22,22,.5);background:linear-gradient(150deg,rgba(255,22,22,.13),#080808)}.plan-card .number{font-size:9px;color:#555;letter-spacing:.18em}.plan-card h3{font:900 35px Anton;margin:16px 0 4px}.plan-card .frequency{color:var(--red);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.plan-card ul{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line)}.plan-card li{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:10px;color:#888}.plan-card li b{color:#fff}.plan-card .plan-cta{margin-top:auto;border:1px solid var(--line);padding:12px;text-align:center;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;transition:.3s}.plan-card:hover .plan-cta{background:var(--red);border-color:var(--red)}
-    .marquee-big{font:900 clamp(55px,10vw,130px)/.8 Anton;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.2);white-space:nowrap;overflow:hidden;margin:0 -6vw;padding:35px 0;border-block:1px solid var(--line)}.marquee-big span{color:var(--red);-webkit-text-stroke:0}
-    .final-cta{min-height:75vh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,rgba(255,22,22,.15),transparent 42%)}.final-cta h2{font:900 clamp(70px,12vw,180px)/.76 Anton;margin:0;text-transform:uppercase;letter-spacing:-.06em}.final-cta h2 span{color:var(--red)}.final-cta p{color:#888;max-width:500px;margin:30px auto;line-height:1.7}
-    .footer{border-top:1px solid var(--line);padding:50px 5vw 28px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer h3{font:900 44px Anton;margin:0}.footer h3 span{color:var(--red)}.footer p,.footer a{color:#777;font-size:12px;line-height:1.8}.footer a:hover{color:#fff}.footer-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;color:#444;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
-    .floating-wa{position:fixed;z-index:120;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--red);box-shadow:0 12px 40px rgba(255,22,22,.28);font-size:18px;font-weight:900;transition:.35s var(--ease)}.floating-wa:hover{transform:scale(1.08) translateY(-4px)}
-    @media(max-width:1050px){.nav-links{display:none}.plans{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr;gap:25px}.photo-stage{grid-template-columns:1fr}.photo.tall{min-height:430px}}
-    @media(max-width:620px){.site-nav{padding:15px 18px}.logo-slot{width:40px;height:40px}.nav-cta{padding:11px 13px}.hero-copy{margin-left:0}.hero-copy h1{font-size:21vw}.hero-visual{inset:10% 18px 4%}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.hours-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.membership-head{display:block}.footer{grid-template-columns:1fr}.footer-bottom{grid-column:auto}.floating-wa{right:16px;bottom:16px}}
+    .membership-head{display:flex;justify-content:space-between;gap:30px;align-items:end}.membership-head p{max-width:420px;color:#777;line-height:1.7;font-size:12px}.plans{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:50px}.plan-card{min-height:500px;padding:24px;border:1px solid var(--line);background:linear-gradient(150deg,#121212,#070707);position:relative;overflow:hidden;transition:.5s var(--ease);display:flex;flex-direction:column}.plan-card:hover{transform:translateY(-12px);border-color:rgba(255,22,22,.6);box-shadow:0 35px 80px rgba(0,0,0,.55),0 0 50px rgba(255,22,22,.08)}.plan-card.featured{border-color:rgba(255,22,22,.5);background:linear-gradient(150deg,rgba(255,22,22,.13),#080808)}.plan-card .number{font-size:9px;color:#555;letter-spacing:.18em}.plan-card h3{font:900 35px Anton;margin:16px 0 4px}.plan-card .frequency{color:var(--red);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.plan-card ul{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--line)}.plan-card li{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:10px;color:#888}.plan-card li b{color:#fff}.plan-card .plan-cta{margin-top:auto;border:1px solid var(--line);padding:12px;text-align:center;font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;transition:.3s}.plan-card:hover .plan-cta{background:var(--red);border-color:var(--red)}
+    .final-cta{min-height:75vh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,rgba(255,22,22,.15),transparent 42%)}.final-cta h2{font:900 clamp(70px,12vw,180px)/.76 Anton;margin:0;text-transform:uppercase;letter-spacing:-.06em}.final-cta h2 span{color:var(--red)}.final-cta p{color:#888;max-width:500px;margin:30px auto;line-height:1.7}.footer{border-top:1px solid var(--line);padding:50px 5vw 28px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}.footer h3{font:900 44px Anton;margin:0}.footer h3 span{color:var(--red)}.footer p,.footer a{color:#777;font-size:12px;line-height:1.8}.footer a:hover{color:#fff}.footer-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;color:#444;font-size:9px;letter-spacing:.12em;text-transform:uppercase}.floating-wa{position:fixed;z-index:120;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--red);box-shadow:0 12px 40px rgba(255,22,22,.28);font-size:18px;font-weight:900;transition:.35s var(--ease)}.floating-wa:hover{transform:scale(1.08) translateY(-4px)}
+    @media(max-width:1050px){.nav-links{display:none}.plans{grid-template-columns:repeat(2,1fr)}.space-intro{grid-template-columns:1fr;gap:25px}.gallery-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:95px}.gallery-card:nth-child(n){grid-column:span 3}.gallery-card:nth-child(1),.gallery-card:nth-child(4){grid-column:span 6}.gallery-card:nth-child(1){grid-row:span 5}.gallery-card:nth-child(4){grid-row:span 4}}
+    @media(max-width:620px){.site-nav{padding:15px 18px}.logo-slot{width:42px;height:42px}.nav-cta{padding:11px 13px}.hero-copy{margin-left:0}.hero-copy h1{font-size:21vw}.hero-visual{inset:9% 18px 4%}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.hours-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.membership-head{display:block}.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:8px}.gallery-card:nth-child(n){grid-column:span 1;grid-row:span 1}.gallery-card:nth-child(1),.gallery-card:nth-child(4){grid-column:span 2;grid-row:span 2}.footer{grid-template-columns:1fr}.footer-bottom{grid-column:auto}.floating-wa{right:16px;bottom:16px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body class="fg-shell">
   <div id="progress"></div><div class="fg-grid"></div>
   <header class="site-nav" id="siteNav">
-    <a class="brand" href="#top"><span class="logo-slot" aria-label="Official FITNESS GYM logo will be placed here">LOGO</span><span class="brand-copy">FITNESS GYM<small>CLUB</small></span></a>
+    <a class="brand" href="#top"><span class="logo-slot" aria-label="FITNESS GYM logo"><img src="logo.jpg" alt="FITNESS GYM logo" onerror="this.onerror=null;this.src='MIAN.jpg'"></span><span class="brand-copy">FITNESS GYM<small>CLUB</small></span></a>
     <nav class="nav-links"><a href="#experience">Experience</a><a href="#hours">Hours</a><a href="#memberships">Memberships</a><a href="#gallery">Gallery</a></nav>
     <a class="nav-cta" href="https://wa.me/201033659722?text=Hello%20FITNESS%20GYM%2C%20I%27d%20like%20to%20ask%20about%20membership." target="_blank" rel="noopener">Join Now</a>
   </header>
@@ -60,7 +48,7 @@
       <div class="hero-content hero-copy">
         <div class="fg-eyebrow">FITNESS GYM CLUB · FAYOUM</div>
         <h1>TRAIN<br><span>DIFFERENT.</span></h1>
-        <p>A premium digital experience for a gym built around discipline, strength and consistency. Real photography and the official logo will become the visual anchors of this experience.</p>
+        <p>Train in a real space built for discipline, strength and consistency. Explore the club, see the facility and choose the membership that fits your routine.</p>
         <div class="fg-actions"><a class="fg-btn primary" href="#memberships">Explore Memberships →</a><a class="fg-btn" href="tel:01033659722">Call 01033659722</a></div>
       </div>
       <div class="hero-index"><b>01</b> ENTER THE EXPERIENCE</div>
@@ -69,14 +57,32 @@
     <div class="fg-marquee"><div class="fg-marquee-track">TRAIN HARD <b>///</b> STAY CONSISTENT <b>///</b> BUILD YOURSELF <b>///</b> FITNESS GYM CLUB <b>///</b> TRAIN HARD <b>///</b> STAY CONSISTENT <b>///</b> BUILD YOURSELF <b>///</b> FITNESS GYM CLUB <b>///</b></div></div>
 
     <section id="experience" class="fg-section">
-      <div class="split reveal"><div><div class="fg-kicker">02 / THE EXPERIENCE</div><h2 class="fg-heading">NOT JUST<br><em>A GYM.</em></h2></div><div><div class="red-rule"></div><p class="split-copy">FITNESS GYM is being shaped into a digital experience that feels as focused as the training floor. The layout leaves room for the real identity, real gym photography and future dynamic content instead of pretending those assets exist before they are supplied.</p></div></div>
+      <div class="space-intro reveal"><div><div class="fg-kicker">02 / THE EXPERIENCE</div><h2 class="fg-heading">NOT JUST<br><em>A GYM.</em></h2></div><div><div class="red-rule"></div><p class="space-copy">A visual experience built around the real FITNESS GYM space. The photography is now integrated into the layout instead of placeholder blocks, with the strongest facility shots getting priority and the complete photo set living in the gallery.</p></div></div>
       <div class="stats reveal"><div class="stat"><b>24/7</b><span>Men's access</span></div><div class="stat"><b>08—22</b><span>Women's hours</span></div><div class="stat"><b>5</b><span>Membership levels</span></div></div>
     </section>
 
     <section id="gallery" class="fg-section">
-      <div class="reveal"><div class="fg-kicker">03 / THE SPACE</div><h2 class="fg-heading">PUT THE<br><em>REAL GYM</em> HERE.</h2></div>
-      <div class="photo-stage reveal"><div class="photo tall"><span>Hero / Main training floor</span></div><div class="photo"><span>Equipment / detail</span></div></div>
-      <p style="color:#555;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-top:15px">Final logo + real location photography will replace these reserved compositions.</p>
+      <div class="reveal"><div class="fg-kicker">03 / THE SPACE</div><h2 class="fg-heading">SEE THE<br><em>REAL GYM.</em></h2></div>
+      <div class="gallery-grid reveal">
+        <figure class="gallery-card"><img src="0c71f5be-140c-4bc1-a105-3bbf8435f8ab.jpg" alt="FITNESS GYM training equipment" loading="eager"><span>Main training floor</span></figure>
+        <figure class="gallery-card"><img src="0d041398-284b-4cc9-b5cb-c838e888b17e.jpg" alt="FITNESS GYM facility" loading="lazy"><span>Training area</span></figure>
+        <figure class="gallery-card"><img src="2e8680cd-80f5-4f41-92ca-1aa5c202dcde.jpg" alt="FITNESS GYM mirrors" loading="lazy"><span>Mirror zone</span></figure>
+        <figure class="gallery-card"><img src="03ab0fd6-fe66-4674-803a-d6af011023a6.jpg" alt="FITNESS GYM dumbbells" loading="lazy"><span>Free weights</span></figure>
+        <figure class="gallery-card"><img src="3c71dc4b-2fbc-470e-a557-df687d3db14c.jpg" alt="FITNESS GYM dumbbell rack" loading="lazy"><span>Dumbbell rack</span></figure>
+        <figure class="gallery-card"><img src="6f686b85-26f9-4c85-a54c-1038986b86ce.jpg" alt="FITNESS GYM equipment" loading="lazy"><span>Equipment floor</span></figure>
+        <figure class="gallery-card"><img src="17dc9442-0c81-41e5-836d-e0f5b3dcae38.jpg" alt="FITNESS GYM cable machine" loading="lazy"><span>Cable station</span></figure>
+        <figure class="gallery-card"><img src="716d6104-fb6e-4e1a-9076-0e166141d69b.jpg" alt="FITNESS GYM entrance" loading="lazy"><span>Club entrance</span></figure>
+        <figure class="gallery-card"><img src="5468b47d-e5a8-4eff-8df2-db78d347ad58.jpg" alt="FITNESS GYM weights" loading="lazy"><span>Strength zone</span></figure>
+        <figure class="gallery-card"><img src="87600573-3fff-4f04-b0af-295a216a2213.jpg" alt="FITNESS GYM floor" loading="lazy"><span>Training floor</span></figure>
+        <figure class="gallery-card"><img src="ba947698-f0e0-44ed-a794-da4a6daaed9b.jpg" alt="FITNESS GYM strength machine" loading="lazy"><span>Strength machine</span></figure>
+        <figure class="gallery-card"><img src="c6a8587c-bb96-4be5-b390-0db01f0b8dbe.JPG" alt="FITNESS GYM exterior at night" loading="lazy"><span>Club exterior</span></figure>
+        <figure class="gallery-card"><img src="dd31e248-d97a-43d3-b91d-33cb613af084.jpg" alt="FITNESS GYM interior" loading="lazy"><span>Interior</span></figure>
+        <figure class="gallery-card"><img src="de37480b-c7e2-477d-8554-84799e75dafe.jpg" alt="FITNESS GYM machines" loading="lazy"><span>Machine zone</span></figure>
+        <figure class="gallery-card"><img src="e6286e2b-7858-4cdb-b6e8-24ccbbaa6161.jpg" alt="FITNESS GYM training area" loading="lazy"><span>Functional area</span></figure>
+        <figure class="gallery-card"><img src="f4704708-b8a0-4844-99a3-f6259c514cb8.jpg" alt="FITNESS GYM cardio area" loading="lazy"><span>Cardio area</span></figure>
+        <figure class="gallery-card"><img src="fb03191a-9993-4266-9154-61777510a812.jpg" alt="FITNESS GYM reception" loading="lazy"><span>Reception</span></figure>
+      </div>
+      <p class="gallery-note">Real club photography · All supplied images integrated into the experience.</p>
     </section>
 
     <section id="hours" class="fg-section">
@@ -118,24 +124,10 @@
     const progress=document.getElementById('progress');
     const reveals=document.querySelectorAll('.reveal');
     const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const update=()=>{
-      nav.classList.toggle('scrolled',scrollY>30);
-      const max=document.documentElement.scrollHeight-innerHeight;
-      progress.style.width=max>0?(scrollY/max*100)+'%':'0%';
-    };
-    addEventListener('scroll',update,{passive:true}); update();
-    if(!reduced && 'IntersectionObserver' in window){
-      const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-      reveals.forEach(e=>io.observe(e));
-    } else reveals.forEach(e=>e.classList.add('in'));
-    if(!reduced){
-      document.querySelectorAll('.plan-card').forEach(card=>{
-        card.addEventListener('pointermove',e=>{
-          if(matchMedia('(hover:hover)').matches){const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`translateY(-10px) perspective(700px) rotateY(${x*4}deg) rotateX(${y*-4}deg)`;}}
-        );
-        card.addEventListener('pointerleave',()=>card.style.transform='');
-      });
-    }
+    const update=()=>{nav.classList.toggle('scrolled',scrollY>30);const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=max>0?(scrollY/max*100)+'%':'0%'};
+    addEventListener('scroll',update,{passive:true});update();
+    if(!reduced&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});reveals.forEach(e=>io.observe(e))}else reveals.forEach(e=>e.classList.add('in'));
+    if(!reduced){document.querySelectorAll('.plan-card').forEach(card=>{card.addEventListener('pointermove',e=>{if(matchMedia('(hover:hover)').matches){const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`translateY(-10px) perspective(700px) rotateY(${x*4}deg) rotateX(${y*-4}deg)`}});card.addEventListener('pointerleave',()=>card.style.transform='')})}
   </script>
 </body>
 </html>
