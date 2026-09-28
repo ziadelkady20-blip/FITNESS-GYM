@@ -162,3 +162,31 @@ button,.fg-btn,.nav-cta{cursor:pointer;}
 }
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Desktop / laptop readability pass */
+@media (min-width:901px) {
+  .hero-copy { max-width:900px !important; }
+  .hero-copy h1 { font-size:clamp(76px,9.2vw,138px) !important; line-height:.91 !important; letter-spacing:-.025em !important; margin:26px 0 28px !important; }
+  .hero-copy h1 span { font-size:.78em !important; line-height:.92 !important; letter-spacing:-.02em !important; }
+  .hero-copy p { line-height:1.9 !important; }
+  .hero-copy .fg-actions { margin-top:30px !important; }
+  .fg-heading { line-height:.98 !important; letter-spacing:-.035em !important; }
+  .space-copy { line-height:2 !important; }
+  .membership-head p { line-height:1.9 !important; }
+  .plan-card li { line-height:1.45; }
+}
+
+@media (min-width:901px) and (max-width:1200px) {
+  .site-nav { padding-inline:3vw; }
+  .hero-copy { margin-left:4vw !important; max-width:720px !important; }
+  .hero-copy h1 { font-size:clamp(70px,9vw,112px) !important; }
+  .hero-visual { inset-inline:2.5% !important; }
+  .fg-section { width:min(92vw,1100px); padding-block:100px; }
+  .plans { gap:12px !important; }
+  .plan-card { min-height:460px; padding:20px; }
+}
+
+@media (min-width:621px) and (max-width:900px) {
+  .hero-copy h1 { line-height:.9 !important; letter-spacing:-.025em !important; }
+  .hero-copy h1 span { line-height:.92 !important; letter-spacing:-.015em !important; }
+}
