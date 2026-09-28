@@ -1,0 +1,101 @@
+/* FITNESS GYM — mobile polish pass */
+@media (max-width: 620px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+  .fg-shell{width:100%;overflow:hidden;}
+
+  /* Header */
+  .site-nav{left:0;right:0;width:100%;padding:10px 12px!important;min-height:62px;}
+  .brand{gap:7px;max-width:calc(100% - 96px);}
+  .logo-slot{width:38px!important;height:38px!important;flex:0 0 38px;}
+  .logo-slot img{padding:3px;}
+  .brand-copy{font-size:12px!important;line-height:1.05;overflow:hidden;text-overflow:ellipsis;}
+  .brand-copy small{margin-top:2px!important;font-size:6px!important;}
+  .nav-cta{padding:10px 11px!important;min-height:38px;font-size:8px!important;letter-spacing:.1em!important;}
+
+  /* Hero: keep image visible, keep type inside viewport */
+  .fg-hero{min-height:100svh!important;height:auto;align-items:end!important;padding-top:62px!important;}
+  .hero-visual{position:absolute!important;inset:62px 10px 10px!important;border-radius:1px;}
+  .hero-visual::before{background-position:center center!important;filter:brightness(1.42) contrast(1.04) saturate(1.08)!important;transform:scale(1.035)!important;}
+  .hero-visual::after{background:linear-gradient(180deg,rgba(5,5,5,.50) 0%,rgba(5,5,5,.24) 30%,rgba(5,5,5,.58) 58%,rgba(5,5,5,.94) 100%),linear-gradient(90deg,rgba(5,5,5,.72) 0%,rgba(5,5,5,.25) 58%,rgba(5,5,5,.38) 100%)!important;}
+  .hero-content{width:100%!important;}
+  .hero-copy{width:100%!important;max-width:100%!important;margin:0!important;padding:0 7vw 50px!important;text-align:left;}
+  .hero-copy .gym-live-status{max-width:100%;}
+  .hero-copy .fg-eyebrow{font-size:8px!important;line-height:1.3;letter-spacing:.12em!important;white-space:normal;}
+  .hero-copy .fg-eyebrow::before{width:24px!important;flex:0 0 24px;}
+  .hero-copy h1{font-size:clamp(60px,18vw,86px)!important;line-height:.84!important;letter-spacing:-.055em!important;margin:16px 0 18px!important;max-width:100%!important;overflow:visible;}
+  .hero-copy h1 span{font-size:.82em!important;line-height:.88!important;white-space:normal!important;display:block;}
+  .hero-copy p{max-width:100%!important;font-size:12px!important;line-height:1.7!important;margin:0!important;color:#f3f3f3!important;}
+  .hero-copy .fg-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;margin-top:18px!important;width:100%!important;}
+  .hero-copy .fg-btn{width:100%!important;min-height:47px!important;padding:0 14px!important;font-size:9px!important;}
+  .hero-index{right:7vw!important;bottom:18px!important;font-size:7px!important;}
+  .hero-index b{font-size:17px!important;}
+  .fg-orbit{width:230px!important;right:-30%!important;bottom:20%!important;opacity:.09!important;}
+
+  /* Sections */
+  .fg-section{width:100%!important;padding:64px 7vw!important;}
+  .fg-kicker{font-size:8px!important;letter-spacing:.15em!important;}
+  .fg-heading{font-size:clamp(40px,13.5vw,66px)!important;line-height:.9!important;margin:14px 0 20px!important;}
+  .space-intro{display:block!important;}
+  .space-copy{font-size:12px!important;line-height:1.85!important;}
+  .red-rule{margin:18px 0;width:48px!important;}
+  .stats{display:grid!important;grid-template-columns:1fr!important;}
+  .stat{padding:22px 0!important;border-right:0!important;}
+  .stat b{font-size:37px!important;line-height:1;}
+  .stat span{font-size:8px!important;}
+
+  /* Gallery */
+  .gallery-grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:145px!important;gap:7px!important;margin-top:30px!important;}
+  .gallery-card:nth-child(n){grid-column:span 1!important;grid-row:span 1!important;}
+  .gallery-card:nth-child(1),.gallery-card:nth-child(4){grid-column:span 2!important;grid-row:span 2!important;}
+  .gallery-card span{left:10px!important;bottom:9px!important;font-size:7px!important;letter-spacing:.1em!important;}
+
+  /* Hours */
+  .hours-grid{grid-template-columns:1fr!important;gap:9px!important;margin-top:30px!important;}
+  .hour-card{min-height:250px!important;padding:22px!important;}
+  .hour-card h3{font-size:34px!important;}
+  .hour-card strong{font-size:clamp(30px,10vw,46px)!important;display:block;line-height:1;}
+  .hour-card p{font-size:11px!important;line-height:1.7;}
+
+  /* Memberships */
+  .membership-head{display:block!important;}
+  .membership-head p{font-size:11px!important;line-height:1.7!important;}
+  .plans{grid-template-columns:1fr!important;gap:9px!important;margin-top:30px!important;}
+  .plan-card{min-height:0!important;padding:21px!important;}
+  .plan-card h3{font-size:32px!important;}
+  .plan-card ul{margin-top:22px!important;}
+  .plan-card li{font-size:9px!important;padding:9px 0!important;}
+
+  /* Exclusive offers */
+  .offers-grid{grid-template-columns:1fr!important;gap:9px!important;margin-top:28px!important;}
+  .exclusive-card{min-width:0;}
+  .offer-image{aspect-ratio:16/10!important;}
+  .offer-body{padding:17px!important;}
+  .offer-body h3{font-size:30px!important;line-height:1!important;}
+  .offer-body p{font-size:11px!important;line-height:1.65!important;min-height:0!important;}
+  .offer-price{font-size:30px!important;}
+
+  /* Footer / floating action */
+  .final-cta{min-height:60svh!important;padding:70px 7vw!important;}
+  .final-cta h2{font-size:clamp(58px,18vw,100px)!important;line-height:.82!important;}
+  .final-cta p{font-size:12px!important;line-height:1.7!important;}
+  .footer{grid-template-columns:1fr!important;gap:28px!important;padding:40px 7vw 22px!important;}
+  .footer h3{font-size:38px!important;}
+  .footer p,.footer a{font-size:11px!important;}
+  .footer-bottom{grid-column:auto!important;line-height:1.6;}
+  .floating-wa{right:14px!important;bottom:14px!important;width:52px!important;height:52px!important;font-size:16px!important;}
+}
+
+@media (min-width:621px) and (max-width:900px){
+  .hero-copy{max-width:760px!important;}
+  .hero-copy h1{max-width:700px!important;}
+}
+
+@media (max-width:380px){
+  .site-nav{padding-inline:9px!important;}
+  .brand-copy{font-size:10px!important;}
+  .nav-cta{padding-inline:9px!important;font-size:7px!important;}
+  .hero-copy{padding-inline:6vw!important;padding-bottom:44px!important;}
+  .hero-copy h1{font-size:17.5vw!important;}
+  .hero-copy p{font-size:11px!important;}
+  .fg-section{padding-inline:6vw!important;}
+}
