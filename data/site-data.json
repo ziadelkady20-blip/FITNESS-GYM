@@ -1,24 +1,92 @@
 {
-  "status": "medium",
-  "statusUpdatedAt": "",
+  "status": "quiet",
+  "statusUpdatedAt": "2026-09-28T23:02:55.348Z",
   "offers": [],
   "gallery": [
-    {"id":"g1","image":"0c71f5be-140c-4bc1-a105-3bbf8435f8ab.jpg","title":"Main training floor"},
-    {"id":"g2","image":"0d041398-284b-4cc9-b5cb-c838e888b17e.jpg","title":"Training area"},
-    {"id":"g3","image":"2e8680cd-80f5-4f41-92ca-1aa5c202dcde.jpg","title":"Mirror zone"},
-    {"id":"g4","image":"03ab0fd6-fe66-4674-803a-d6af011023a6.jpg","title":"Free weights"},
-    {"id":"g5","image":"3c71dc4b-2fbc-470e-a557-df687d3db14c.jpg","title":"Dumbbell rack"},
-    {"id":"g6","image":"6f686b85-26f9-4c85-a54c-1038986b86ce.jpg","title":"Equipment floor"},
-    {"id":"g7","image":"17dc9442-0c81-41e5-836d-e0f5b3dcae38.jpg","title":"Cable station"},
-    {"id":"g8","image":"716d6104-fb6e-4e1a-9076-0e166141d69b.jpg","title":"Club entrance"},
-    {"id":"g9","image":"5468b47d-e5a8-4eff-8df2-db78d347ad58.jpg","title":"Strength zone"},
-    {"id":"g10","image":"87600573-3fff-4f04-b0af-295a216a2213.jpg","title":"Training floor"},
-    {"id":"g11","image":"ba947698-f0e0-44ed-a794-da4a6daaed9b.jpg","title":"Strength machine"},
-    {"id":"g12","image":"c6a8587c-bb96-4be5-b390-0db01f0b8dbe.JPG","title":"Club exterior"},
-    {"id":"g13","image":"dd31e248-d97a-43d3-b91d-33cb613af084.jpg","title":"Interior"},
-    {"id":"g14","image":"de37480b-c7e2-477d-8554-84799e75dafe.jpg","title":"Machine zone"},
-    {"id":"g15","image":"e6286e2b-7858-4cdb-b6e8-24ccbbaa6161.jpg","title":"Functional area"},
-    {"id":"g16","image":"f4704708-b8a0-4844-99a3-f6259c514cb8.jpg","title":"Cardio area"},
-    {"id":"g17","image":"fb03191a-9993-4266-9154-61777510a812.jpg","title":"Reception"}
+    {
+      "id": "g1",
+      "image": "0c71f5be-140c-4bc1-a105-3bbf8435f8ab.jpg",
+      "title": "Main training floor"
+    },
+    {
+      "id": "g2",
+      "image": "0d041398-284b-4cc9-b5cb-c838e888b17e.jpg",
+      "title": "Training area"
+    },
+    {
+      "id": "g3",
+      "image": "2e8680cd-80f5-4f41-92ca-1aa5c202dcde.jpg",
+      "title": "Mirror zone"
+    },
+    {
+      "id": "g4",
+      "image": "03ab0fd6-fe66-4674-803a-d6af011023a6.jpg",
+      "title": "Free weights"
+    },
+    {
+      "id": "g5",
+      "image": "3c71dc4b-2fbc-470e-a557-df687d3db14c.jpg",
+      "title": "Dumbbell rack"
+    },
+    {
+      "id": "g6",
+      "image": "6f686b85-26f9-4c85-a54c-1038986b86ce.jpg",
+      "title": "Equipment floor"
+    },
+    {
+      "id": "g7",
+      "image": "17dc9442-0c81-41e5-836d-e0f5b3dcae38.jpg",
+      "title": "Cable station"
+    },
+    {
+      "id": "g8",
+      "image": "716d6104-fb6e-4e1a-9076-0e166141d69b.jpg",
+      "title": "Club entrance"
+    },
+    {
+      "id": "g9",
+      "image": "5468b47d-e5a8-4eff-8df2-db78d347ad58.jpg",
+      "title": "Strength zone"
+    },
+    {
+      "id": "g10",
+      "image": "87600573-3fff-4f04-b0af-295a216a2213.jpg",
+      "title": "Training floor"
+    },
+    {
+      "id": "g11",
+      "image": "ba947698-f0e0-44ed-a794-da4a6daaed9b.jpg",
+      "title": "Strength machine"
+    },
+    {
+      "id": "g12",
+      "image": "c6a8587c-bb96-4be5-b390-0db01f0b8dbe.JPG",
+      "title": "Club exterior"
+    },
+    {
+      "id": "g13",
+      "image": "dd31e248-d97a-43d3-b91d-33cb613af084.jpg",
+      "title": "Interior"
+    },
+    {
+      "id": "g14",
+      "image": "de37480b-c7e2-477d-8554-84799e75dafe.jpg",
+      "title": "Machine zone"
+    },
+    {
+      "id": "g15",
+      "image": "e6286e2b-7858-4cdb-b6e8-24ccbbaa6161.jpg",
+      "title": "Functional area"
+    },
+    {
+      "id": "g16",
+      "image": "f4704708-b8a0-4844-99a3-f6259c514cb8.jpg",
+      "title": "Cardio area"
+    },
+    {
+      "id": "g17",
+      "image": "fb03191a-9993-4266-9154-61777510a812.jpg",
+      "title": "Reception"
+    }
   ]
 }
