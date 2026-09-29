@@ -1,0 +1,93 @@
+name: Refresh Arabic Gen Z Copy
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-copy:
+    if: ${{ !contains(github.event.head_commit.message, 'genz-copy') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Update Arabic copy
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('scripts/site-data.js')
+          s = p.read_text(encoding='utf-8')
+
+          replacements = {
+            'join': "يلا اشترك",
+            'eyebrow': 'FITNESS GYM CLUB · الفيوم',
+            'heroText': 'عايز تتمرّن بجد؟ تعالى جرّب مكان معمول عشان تطوّر نفسك، تقوّي جسمك وتكسر روتينك. شوف الجيم واختار العضوية اللي ماشية معاك.',
+            'explore': 'شوف العضويات ←',
+            'call': 'كلمنا 01033659722',
+            'heroIndex': 'يلا ابدأ التجربة',
+            'expKicker': '02 / التجربة',
+            'expHeading': 'مش مجرد<br><em>جيم.</em>',
+            'expCopy': 'هنا التمرين له شكل تاني. مكان حقيقي، معدات قوية وجو يخليك عايز تنزل تتمرّن وتكسر أرقامك كل مرة.',
+            'galleryKicker': '03 / المكان',
+            'galleryHeading': 'شوف<br><em>الجيم على حقيقته.</em>',
+            'galleryNote': 'صور حقيقية من الجيم · شوف المكان والمعدات قبل ما تيجي.',
+            'hoursKicker': '04 / مواعيدنا',
+            'hoursHeading': 'تمرّن في<br><em>وقتك.</em>',
+            'menText': 'مفتوح ليك طول اليوم. تعالى في الوقت اللي يناسبك وخلّي التمرين على مزاجك.',
+            'womenText': 'مواعيد مخصوص للسيدات عشان تتمرّني براحتك وتلعبي على هدفك.',
+            'membershipKicker': '05 / العضويات',
+            'membershipHeading': 'اختار<br><em>نظامك.</em>',
+            'membershipCopy': 'اختار العضوية اللي ماشية مع وقتك وطريقة تمرينك، ويلا نبدأ. لو محتار، كلمنا ونساعدك تختار.',
+            'ask': 'اسأل عن',
+            'finalKicker': '06 / جاهز؟',
+            'finalHeading': 'يلا<br><span>نبدأ.</span>',
+            'finalText': 'عندك سؤال عن العضويات أو المواعيد؟ كلمنا على طول وخد كل التفاصيل.',
+            'finalButton': 'كلمنا واتساب 01033659722 ←',
+            'hoursLabel': 'مواعيدنا',
+            'contactLabel': 'كلمنا',
+            'whatsapp': 'واتساب',
+            'footer': '© FITNESS GYM CLUB · يلا نتمرّن.',
+            'status': 'حالة الجيم',
+            'exclusive': 'عرض جامد',
+            'until': 'لحد',
+            'limited': 'عرض لفترة محدودة من FITNESS GYM.',
+          }
+
+          for key, value in replacements.items():
+              pattern = rf"({re.escape(key)}\s*:\s*)'[^']*'"
+              s, n = re.subn(pattern, lambda m: m.group(1) + "'" + value.replace("'", "\\'") + "'", s, count=1)
+              if n != 1:
+                  raise SystemExit(f'Could not replace key: {key}')
+
+          s, n = re.subn(r"nav:\s*\[[^\]]*\]", "nav:['التجربة','مواعيدنا','العضويات','الجاليري']", s, count=1)
+          if n != 1:
+              raise SystemExit('Could not replace nav')
+
+          s, n = re.subn(r"frequencies:\s*\[[^\]]*\]", "frequencies:['مرتين في الأسبوع','3 أيام في الأسبوع','4 أيام في الأسبوع','5 أيام في الأسبوع','كل يوم · تمرين براحتك']", s, count=1)
+          if n != 1:
+              raise SystemExit('Could not replace frequencies')
+
+          s, n = re.subn(r"periods:\s*\[[^\]]*\]", "periods:['شهر','شهرين','3 شهور','6 شهور','سنة']", s, count=1)
+          if n != 1:
+              raise SystemExit('Could not replace periods')
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit changes and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/workflows/genz-ar-copy.yml
+          git add scripts/site-data.js .github/workflows/genz-ar-copy.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "feat: genz-copy Arabic wording"
+          git push
