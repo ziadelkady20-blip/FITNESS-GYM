@@ -28,15 +28,42 @@ jobs:
           else:
               print('CMS client already wired')
           PY
-      - name: Commit CMS wiring
+      - name: Polish gym status UI
         shell: bash
         run: |
-          if git diff --quiet -- index.html; then
+          if grep -q 'GYM STATUS mobile/English polish' styles/premium.css; then
+            echo 'Gym status polish already applied.'
+            exit 0
+          fi
+          cat >> styles/premium.css <<'CSS'
+
+/* GYM STATUS mobile/English polish */
+.gym-live-status{display:inline-flex!important;align-items:center!important;gap:12px!important;width:max-content!important;max-width:100%!important;padding:10px 14px 10px 10px!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:999px!important;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;box-shadow:0 12px 35px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.05)!important;backdrop-filter:blur(12px)!important;position:relative!important;overflow:hidden!important;isolation:isolate!important}
+.gym-live-status::before{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(255,22,22,.08),transparent 60%)!important;pointer-events:none!important;z-index:-1!important}
+.gym-live-status .live-dot{position:relative!important;display:block!important;flex:0 0 28px!important;width:28px!important;height:28px!important;border-radius:9px!important;background:linear-gradient(145deg,#ff2525,#a90000)!important;box-shadow:0 6px 18px rgba(255,22,22,.3)!important}
+.gym-live-status .live-dot::before{content:""!important;position:absolute!important;left:7px!important;right:7px!important;top:12px!important;height:4px!important;border-radius:999px!important;background:#fff!important;box-shadow:-4px 0 0 -1px #fff,4px 0 0 -1px #fff!important}
+.gym-live-status .live-dot::after{content:""!important;position:absolute!important;left:4px!important;right:4px!important;top:8px!important;height:12px!important;border-left:3px solid #fff!important;border-right:3px solid #fff!important;border-radius:3px!important;opacity:.95!important}
+.gym-live-status>span:last-child{display:flex!important;flex-direction:column!important;gap:2px!important;min-width:0!important}
+.gym-live-status small{font:800 8px/1 Inter,Arial,sans-serif!important;letter-spacing:.18em!important;color:#777!important;text-transform:uppercase!important;font-size:0!important}
+.gym-live-status small::after{content:"GYM STATUS"!important;font:inherit!important;font-size:8px!important}
+.gym-live-status b{font:900 13px/1 Anton,Impact,sans-serif!important;letter-spacing:.08em!important;color:#fff!important;text-transform:uppercase!important;font-size:0!important}
+.gym-live-status b::after{font:inherit!important;font-size:13px!important}
+.gym-live-status.quiet b::after{content:"QUIET"!important}.gym-live-status.medium b::after{content:"MEDIUM"!important}.gym-live-status.busy b::after{content:"BUSY"!important}
+.gym-live-status em{display:block!important;width:7px!important;height:7px!important;border-radius:50%!important;margin-left:6px!important;background:#42e98b!important;box-shadow:0 0 0 4px rgba(66,233,139,.08),0 0 16px rgba(66,233,139,.5)!important;animation:gym-status-pulse 1.8s ease-in-out infinite!important}
+.gym-live-status.medium em{background:#ffb52e!important;box-shadow:0 0 0 4px rgba(255,181,46,.08),0 0 16px rgba(255,181,46,.45)!important}.gym-live-status.busy em{background:#ff3b30!important;box-shadow:0 0 0 4px rgba(255,59,48,.08),0 0 16px rgba(255,59,48,.45)!important}
+@keyframes gym-status-pulse{0%,100%{transform:scale(.9);opacity:.75}50%{transform:scale(1.08);opacity:1}}
+@media(max-width:620px){.gym-live-status{gap:10px!important;padding:9px 12px 9px 9px!important;margin:0 0 12px!important}.gym-live-status .live-dot{flex-basis:30px!important;width:30px!important;height:30px!important}.gym-live-status small::after{font-size:7px!important}.gym-live-status b::after{font-size:14px!important;letter-spacing:.09em!important}.gym-live-status em{width:6px!important;height:6px!important;margin-left:4px!important}.hero-copy .gym-live-status{align-self:flex-start!important;direction:ltr!important}.hero-copy .gym-live-status>span:last-child{direction:ltr!important;text-align:left!important}}
+@media(max-width:390px){.gym-live-status{padding:8px 10px 8px 8px!important}.gym-live-status .live-dot{width:28px!important;height:28px!important;flex-basis:28px!important}.gym-live-status b::after{font-size:13px!important}}
+CSS
+      - name: Commit CMS and status changes
+        shell: bash
+        run: |
+          if git diff --quiet -- index.html styles/premium.css; then
             echo 'No change needed.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          git commit -m 'chore: wire FITNESS GYM CMS into website'
+          git add index.html styles/premium.css
+          git commit -m 'fix: polish gym status UI'
           git push
