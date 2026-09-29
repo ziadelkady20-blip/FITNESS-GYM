@@ -2,29 +2,28 @@ name: Polish gym status
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
   polish:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Append gym status polish
-        shell: python
+        shell: bash
         run: |
-          from pathlib import Path
-          p = Path('styles/premium.css')
-          css = p.read_text(encoding='utf-8')
-          marker = '/* GYM STATUS mobile/English polish */'
-          if marker in css:
-              raise SystemExit(0)
-          patch = r'''/* GYM STATUS mobile/English polish */
+          if grep -q 'GYM STATUS mobile/English polish' styles/premium.css; then
+            exit 0
+          fi
+          cat >> styles/premium.css <<'CSS'
+
+/* GYM STATUS mobile/English polish */
 .gym-live-status{display:inline-flex!important;align-items:center!important;gap:12px!important;width:max-content!important;max-width:100%!important;padding:10px 14px 10px 10px!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:999px!important;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025))!important;box-shadow:0 12px 35px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.05)!important;backdrop-filter:blur(12px)!important;position:relative!important;overflow:hidden!important;isolation:isolate!important}
 .gym-live-status::before{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(90deg,rgba(255,22,22,.08),transparent 60%)!important;pointer-events:none!important;z-index:-1!important}
 .gym-live-status .live-dot{position:relative!important;display:block!important;flex:0 0 28px!important;width:28px!important;height:28px!important;border-radius:9px!important;background:linear-gradient(145deg,#ff2525,#a90000)!important;box-shadow:0 6px 18px rgba(255,22,22,.3)!important}
@@ -41,8 +40,7 @@ jobs:
 @keyframes gym-status-pulse{0%,100%{transform:scale(.9);opacity:.75}50%{transform:scale(1.08);opacity:1}}
 @media(max-width:620px){.gym-live-status{gap:10px!important;padding:9px 12px 9px 9px!important;margin:0 0 12px!important}.gym-live-status .live-dot{flex-basis:30px!important;width:30px!important;height:30px!important}.gym-live-status small::after{font-size:7px!important}.gym-live-status b::after{font-size:14px!important;letter-spacing:.09em!important}.gym-live-status em{width:6px!important;height:6px!important;margin-left:4px!important}.hero-copy .gym-live-status{align-self:flex-start!important;direction:ltr!important}.hero-copy .gym-live-status>span:last-child{direction:ltr!important;text-align:left!important}}
 @media(max-width:390px){.gym-live-status{padding:8px 10px 8px 8px!important}.gym-live-status .live-dot{width:28px!important;height:28px!important;flex-basis:28px!important}.gym-live-status b::after{font-size:13px!important}}
-'''
-          p.write_text(css + '\n\n' + patch, encoding='utf-8')
+CSS
 
       - name: Commit status polish
         shell: bash
@@ -50,5 +48,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add styles/premium.css
-          git diff --cached --quiet || git commit -m "fix: polish gym status on mobile"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "fix: polish gym status on mobile"
           git push
